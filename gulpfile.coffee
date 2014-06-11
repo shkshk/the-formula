@@ -1,5 +1,7 @@
 gulp = require('gulp')
 gutil = require('gulp-util')
+rimraf = require('rimraf')
+
 express = require('express')
 tinylr = require('tiny-lr')
 livereload = require('gulp-livereload')
@@ -15,7 +17,9 @@ server = express()
 server.use(require('connect-livereload')())
 server.use(express.static('./build'))
 
-gulp.task 'html', ->
+gulp.task 'clean', (cb) -> rimraf('build/', cb)
+
+gulp.task 'html', ['clean'], ->
   gulp.src(paths.views)
     .pipe(gulp.dest('build'))
     .pipe(livereload(lr))
