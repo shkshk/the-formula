@@ -24,7 +24,6 @@ module.exports =
 
   browserify:
     extensions: ['.coffee']
-    transform: ['coffeeify']
 
   # test results reporter to use
   # possible values: 'dots', 'progress'

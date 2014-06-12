@@ -7,7 +7,8 @@ tinylr = require('tiny-lr')
 livereload = require('gulp-livereload')
 stylus = require('gulp-stylus')
 coffee = require('gulp-coffee')
-include = require('gulp-include')
+browserify = require('browserify')
+source = require('vinyl-source-stream')
 _ = require('lodash')
 karma = require('karma').server
 
@@ -32,6 +33,7 @@ lr = tinylr()
 server = express()
 server.use(require('connect-livereload')())
 server.use(express.static('./build'))
+bundler = browserify(entries: ['./' + paths.mainscript], extenstions: ['.coffee'])
 
 gulp.task 'clean:html', (cb) -> rimraf('build/**/*.html', cb)
 gulp.task 'clean:stylesheets', (cb) -> rimraf('build/assets/stylesheets', cb)
@@ -50,9 +52,8 @@ gulp.task 'stylesheets', ['clean:stylesheets'], ->
     .pipe(livereload(lr))
 
 gulp.task 'javascripts', ['clean:javascripts'], ->
-  gulp.src(paths.mainscript)
-    .pipe(include())
-    .pipe(coffee())
+    bundler.bundle()
+    .pipe(source('application.js'))
     .pipe(gulp.dest(buildpaths.javascripts))
     .pipe(livereload(lr))
 
