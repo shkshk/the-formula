@@ -30,6 +30,9 @@
     "karma-coffee-preprocessor": "~0.2.1",
     "lodash": "~2.4.1",
     "karma-phantomjs-launcher": "~0.1.4",
-    "phantomjs": "~1.9.7-8"
+    "phantomjs": "~1.9.7-8",
+    "browserify": "~4.1.9",
+    "karma-browserify": "~0.2.1",
+    "coffeeify": "~0.6.0"
   }
 }
