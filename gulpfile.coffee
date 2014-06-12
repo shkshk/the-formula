@@ -8,6 +8,8 @@ livereload = require('gulp-livereload')
 stylus = require('gulp-stylus')
 coffee = require('gulp-coffee')
 include = require('gulp-include')
+_ = require('lodash')
+karma = require('karma').server
 
 paths =
   views: 'app/views/**/*.html'
@@ -15,6 +17,7 @@ paths =
   javascripts: 'app/assets/javascripts/**/*.coffee'
   mainstylesheet: 'app/assets/stylesheets/application.styl'
   mainscript: 'app/assets/javascripts/application.coffee'
+  testFiles: ['app/assets/javascripts/modules/*.coffee', 'test/**/*.coffee']
 
 buildpaths =
   views: 'build'
@@ -23,6 +26,7 @@ buildpaths =
 
 serverport = 4000
 lrport = 35729
+karmaConf = require('./karma.conf.coffee')
 
 lr = tinylr()
 server = express()
@@ -59,5 +63,8 @@ gulp.task 'serve', ['html', 'stylesheets', 'javascripts'], ->
   gulp.watch(paths.stylesheets, ['stylesheets'])
   gulp.watch(paths.javascripts, ['javascripts'])
   gutil.log("Listening on 0.0.0.0:#{serverport}")
+
+gulp.task 'test', (cb) ->
+  karma.start(_.assign({}, karmaConf, { singleRun: true }), cb)
 
 gulp.task('default', -> gutil.log('hello world'))

@@ -26,6 +26,10 @@
     "rimraf": "~2.2.8",
     "gulp-stylus": "~1.0.2",
     "gulp-include": "~0.2.3",
-    "gulp-coffee": "~2.0.1"
+    "gulp-coffee": "~2.0.1",
+    "karma-coffee-preprocessor": "~0.2.1",
+    "lodash": "~2.4.1",
+    "karma-phantomjs-launcher": "~0.1.4",
+    "phantomjs": "~1.9.7-8"
   }
 }
