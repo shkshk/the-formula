@@ -1,6 +1,6 @@
-Formula = require('../../app/assets/javascripts/modules/formula')
+Formula = require('../../app/assets/javascripts/models/formula')
 
-describe 'Formula', ->
+describe 'Models.Formula', ->
   describe '#calculate', ->
     describe 'when passed empty params', ->
       beforeEach ->
