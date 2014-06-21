@@ -12,6 +12,7 @@ browserify = require('browserify')
 source = require('vinyl-source-stream')
 _ = require('lodash')
 karma = require('karma').server
+deploy = require('gulp-gh-pages')
 
 paths =
   views: 'app/views/**/*.html'
@@ -22,6 +23,7 @@ paths =
   testFiles: ['app/assets/javascripts/modules/*.coffee', 'test/**/*.coffee']
 
 buildpaths =
+  build: 'build/**/*'
   views: 'build'
   stylesheets: 'build/assets/stylesheets'
   javascripts: 'build/assets/javascripts'
@@ -59,7 +61,9 @@ gulp.task 'javascripts', ['clean:javascripts'], ->
     .pipe(gulp.dest(buildpaths.javascripts))
     .pipe(livereload(lr))
 
-gulp.task 'serve', ['html', 'stylesheets', 'javascripts'], ->
+gulp.task 'build', ['html', 'stylesheets', 'javascripts']
+
+gulp.task 'serve', ['build'], ->
   lr.listen(lrport)
   server.listen(serverport)
   gulp.watch(paths.views, ['html'])
@@ -69,5 +73,9 @@ gulp.task 'serve', ['html', 'stylesheets', 'javascripts'], ->
 
 gulp.task 'test', (cb) ->
   karma.start(_.assign({}, karmaConf, { singleRun: true }), cb)
+
+gulp.task 'deploy', ['build'], ->
+  gulp.src(buildpaths.build)
+    .pipe(deploy())
 
 gulp.task('default', -> gutil.log('hello world'))
