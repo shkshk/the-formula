@@ -2,3 +2,9 @@ language: node_js
 node_js:
   - "0.11"
   - "0.10"
+env:
+  global:
+    - secure: "WATBVRgiqJPwhkXLbBqWCdxB3tvYO5uUIqngm2rC9N+pN1kuQppyxZizvY0NtpuN1wqYsT+4t+sE4Pq2Lwr4tAj/2PVOHRAgA/IlD9ymwFOOz5LzPg6+l3ON9//lA6qNyYw0yZRfv94gQx+CreEVyTF/vUKxkPuiXiWY37ZYCrg="
+
+after_success:
+  - gulp deploy:travis
