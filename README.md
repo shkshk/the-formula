@@ -1,4 +1,4 @@
-## The Formula
+## The Formula [![Build Status](https://travis-ci.org/shkshk/the-formula.svg?branch=master)](https://travis-ci.org/shkshk/the-formula)
 
 shkshk.ru application for computing all required dimensions of a sleeve pattern.
 
