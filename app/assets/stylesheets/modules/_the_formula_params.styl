@@ -1,6 +1,10 @@
 .the_formula-params
   display: table-cell
   width: 200px
-  padding: 1em
+  padding: 2em
   box-sizing: border-box
   vertical-align: top
+
+  @media print {
+    & { display: none }
+  }

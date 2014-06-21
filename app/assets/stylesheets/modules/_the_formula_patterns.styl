@@ -1,19 +1,21 @@
 .the_formula-patterns
   display: table-cell
-  padding: 1em
+  padding: 2em 1em
   text-align: center
+  font-family: $certege
+  font-style: italic
 
 .the_formula-felt, .the_formula-leather
   display: inline-block
   text-align: center
-  outline: 1px dashed #000
+  outline: 2px dashed $body-color
 
 .the_formula-felt
   position: relative
 
   &:before
     position: absolute
-    top: -1.25em
+    top: -28px
     left: 0
     right: 0
     display: block
@@ -23,17 +25,17 @@
   &:after
     position: absolute
     top: 30%
-    left: -1.5em
+    right: 100%
     display: block
+    margin-right: 12px
     content: attr(data-height)
-    transform: rotate(-90deg)
 
 .the_formula-leather
   position: absolute
 
   &:before
     position: absolute
-    top: .25em
+    top: -28px
     left: 0
     right: 0
     display: block
@@ -43,7 +45,7 @@
   &:after
     position: absolute
     top: 40%
-    left: -.25em
+    left: 0
     display: block
+    margin-left: 6px
     content: attr(data-height)
-    transform: rotate(-90deg)
