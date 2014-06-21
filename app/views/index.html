@@ -6,8 +6,28 @@
   <link rel="stylesheet" href="/assets/stylesheets/application.css">
 </head>
 <body>
-  hello
+  <div id="the_formula" class="the_formula">
+    <form class="the_formula-params">
+      <fieldset>
+        <div><input type="text" v-model="params.width" /></div>
+        <div><input type="text" v-model="params.height" /></div>
+        <div><input type="text" v-model="params.depth" /></div>
+      </fieldset>
+    </form>
+    <div class="the_formula-patterns">
+      <div class="felt_pattern"
+        v-style="width: patterns.felt.width + 'mm', height: patterns.felt.height + 'mm'">
 
+        <div class="leather_pattern"
+          v-style="
+            width: patterns.leather.width + 'mm',
+            height: patterns.leather.height + 'mm',
+            left: params.margin + params.padding + 'mm',
+            top: '10mm'">
+        </div>
+      </div>
+    </div>
+  </div>
   <script src="/assets/javascripts/application.js"></script>
 </body>
 </html>

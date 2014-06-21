@@ -4,10 +4,11 @@ module.exports =
 
   # frameworks to use
   # available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-  frameworks: ['jasmine', 'browserify']
+  frameworks: ['jasmine', 'browserify', 'jquery-2.1.0']
 
   # list of files / patterns to load in the browser
   files: [
+    'test/helpers/jasmine-jquery.js',
     'test/**/*Spec.coffee'
   ]
 
