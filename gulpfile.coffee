@@ -7,6 +7,7 @@ tinylr = require('tiny-lr')
 livereload = require('gulp-livereload')
 stylus = require('gulp-stylus')
 coffee = require('gulp-coffee')
+autoprefixer = require('gulp-autoprefixer')
 browserify = require('browserify')
 source = require('vinyl-source-stream')
 _ = require('lodash')
@@ -48,6 +49,7 @@ gulp.task 'html', ['clean:html'], ->
 gulp.task 'stylesheets', ['clean:stylesheets'], ->
   gulp.src(paths.mainstylesheet)
     .pipe(stylus())
+    .pipe(autoprefixer())
     .pipe(gulp.dest(buildpaths.stylesheets))
     .pipe(livereload(lr))
 
