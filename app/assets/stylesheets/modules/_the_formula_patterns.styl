@@ -1,0 +1,49 @@
+.the_formula-patterns
+  display: table-cell
+  padding: 1em
+  text-align: center
+
+.the_formula-felt, .the_formula-leather
+  display: inline-block
+  text-align: center
+  outline: 1px dashed #000
+
+.the_formula-felt
+  position: relative
+
+  &:before
+    position: absolute
+    top: -1.25em
+    left: 0
+    right: 0
+    display: block
+    content: attr(data-width)
+    text-align: center
+
+  &:after
+    position: absolute
+    top: 30%
+    left: -1.5em
+    display: block
+    content: attr(data-height)
+    transform: rotate(-90deg)
+
+.the_formula-leather
+  position: absolute
+
+  &:before
+    position: absolute
+    top: .25em
+    left: 0
+    right: 0
+    display: block
+    content: attr(data-width)
+    text-align: center
+
+  &:after
+    position: absolute
+    top: 40%
+    left: -.25em
+    display: block
+    content: attr(data-height)
+    transform: rotate(-90deg)

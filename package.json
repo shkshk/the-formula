@@ -41,6 +41,7 @@
     "vinyl-source-stream": "~0.1.1",
     "vue": "~0.10.5",
     "karma-jquery": "~0.1.0",
-    "karma-jasmine": "~0.1.5"
+    "karma-jasmine": "~0.1.5",
+    "gulp-autoprefixer": "0.0.7"
   }
 }
