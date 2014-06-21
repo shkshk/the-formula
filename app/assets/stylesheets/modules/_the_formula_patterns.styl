@@ -30,3 +30,20 @@
 
 .the_formula-leather
   position: absolute
+
+  &:before
+    position: absolute
+    top: .25em
+    left: 0
+    right: 0
+    display: block
+    content: attr(data-width)
+    text-align: center
+
+  &:after
+    position: absolute
+    top: 40%
+    left: -.25em
+    display: block
+    content: attr(data-height)
+    transform: rotate(-90deg)
