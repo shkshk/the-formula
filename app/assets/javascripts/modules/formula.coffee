@@ -12,32 +12,28 @@ module.exports = class Formula
     power: 2
     vertical_power: 2
 
-  constructor: ->
-    @params = _.merge({}, @constructor.DEFAULTS)
+  @calculate: (params = {}) ->
+    params = @_prepare(params)
+    feltDimensions = @_calculateFeltDimensions(params)
+    leatherDimensions = @_calculateLeatherDimensions(params, feltDimensions)
+    { felt: feltDimensions, leather: leatherDimensions}
 
-  configure: (params) ->
-    _.merge(@params, params)
-    for key, value of @params
-      @params[key] = parseInt(value, 10)
-    @
+  @_prepare: (params) ->
+    params = _.merge({}, @DEFAULTS, params)
+    for key, value of params
+      params[key] = parseInt(value, 10)
+    params
 
-  calculate: ->
-    feltDimensions = @_calculateFeltDimensions()
+  @_calculateFeltDimensions: (params) ->
     {
-      felt: feltDimensions
-      leather: @_calculateLeatherDimensions(feltDimensions)
+      width: params.width + params.depth + (2 * params.margin) + params.power
+      height: (params.height * 2) + params.depth + params.felt_depth + params.vertical_power + params.lug
     }
 
-  _calculateFeltDimensions: ->
+  @_calculateLeatherDimensions: (params, felt) ->
+    visibleHeight = (params.height + params.lug) * 0.66
     {
-      width: @params.width + @params.depth + (2 * @params.margin) + @params.power
-      height: (@params.height * 2) + @params.depth + @params.felt_depth + @params.vertical_power + @params.lug
-    }
-
-  _calculateLeatherDimensions: (felt) ->
-    visibleHeight = (@params.height + @params.lug) * 0.66
-    {
-      width: felt.width - (2 * (@params.margin + @params.padding))
+      width: felt.width - (2 * (params.margin + params.padding))
       height: visibleHeight + 10
       visibleHeight: visibleHeight
       smallHeight: visibleHeight - 18 # FIXME: why 18?
