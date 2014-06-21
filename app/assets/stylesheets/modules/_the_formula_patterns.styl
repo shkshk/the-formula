@@ -3,13 +3,30 @@
   padding: 1em
   text-align: center
 
-.felt_pattern, .leather_pattern
+.the_formula-felt, .the_formula-leather
   display: inline-block
   text-align: center
   outline: 1px dashed #000
 
-.felt_pattern
+.the_formula-felt
   position: relative
 
-.leather_pattern
+  &:before
+    position: absolute
+    top: -1.25em
+    left: 0
+    right: 0
+    display: block
+    content: attr(data-width)
+    text-align: center
+
+  &:after
+    position: absolute
+    top: 30%
+    left: -1.5em
+    display: block
+    content: attr(data-height)
+    transform: rotate(-90deg)
+
+.the_formula-leather
   position: absolute

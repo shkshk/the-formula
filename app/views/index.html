@@ -15,10 +15,11 @@
       </fieldset>
     </form>
     <div class="the_formula-patterns">
-      <div class="felt_pattern"
-        v-style="width: patterns.felt.width + 'mm', height: patterns.felt.height + 'mm'">
+      <div class="the_formula-felt"
+        v-style="width: patterns.felt.width + 'mm', height: patterns.felt.height + 'mm'"
+        v-attr="data-width: patterns.felt.width, data-height: patterns.felt.height">
 
-        <div class="leather_pattern"
+        <div class="the_formula-leather"
           v-style="
             width: patterns.leather.width + 'mm',
             height: patterns.leather.height + 'mm',
