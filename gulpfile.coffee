@@ -78,4 +78,8 @@ gulp.task 'deploy', ['build'], ->
   gulp.src(buildpaths.build)
     .pipe(deploy())
 
-gulp.task('default', -> gutil.log('hello world'))
+gulp.task 'deploy:travis', ['build'], ->
+  gulp.src(buildpaths.build)
+    .pipe(deploy(remoteUrl: process.env.GH_REPO_URL))
+
+gulp.task 'default', ['serve']
