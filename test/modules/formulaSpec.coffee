@@ -14,7 +14,7 @@ describe 'Formula', ->
       expected =
         felt_depth: 3
         margin: 5
-        padding: 7
+        padding: 2
         lug: 8
         power: 2
         vertical_power: 2
@@ -37,7 +37,7 @@ describe 'Formula', ->
         constants:
           felt_depth: 200
           margin: 5
-          padding: 7
+          padding: 2
           lug: 80
           power: 2
           vertical_power: 2

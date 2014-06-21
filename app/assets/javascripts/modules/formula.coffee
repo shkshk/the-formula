@@ -8,7 +8,7 @@ module.exports = class Formula
     constants:
       felt_depth: 3
       margin: 5
-      padding: 7
+      padding: 2
       lug: 8
       power: 2
       vertical_power: 2
@@ -18,6 +18,7 @@ module.exports = class Formula
 
   configure: (params) ->
     _.merge(@params, params)
+    @
 
   calculate: ->
     feltDimensions = @_calculateFeltDimensions()
@@ -35,9 +36,8 @@ module.exports = class Formula
   _calculateLeatherDimensions: (felt) ->
     visibleHeight = (@params.height + @params.constants.lug) * 0.66
     {
-      width: felt.width - (2 * @params.constants.padding)
+      width: felt.width - (2 * (@params.constants.margin + @params.constants.padding))
       height: visibleHeight + 10
       visibleHeight: visibleHeight
       smallHeight: visibleHeight - 18 # FIXME: why 18?
-
     }
