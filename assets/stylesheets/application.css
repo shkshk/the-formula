@@ -1,0 +1,79 @@
+body {
+  color: #212121;
+  font-size: 150%;
+  line-heigh: 1;
+}
+.the_formula {
+  display: table-row;
+}
+.the_formula-params {
+  display: table-cell;
+  width: 200px;
+  padding: 2em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  vertical-align: top;
+}
+@media print {
+  .the_formula-params {
+    display: none;
+  }
+}
+.the_formula-patterns {
+  display: table-cell;
+  padding: 2em 1em;
+  text-align: center;
+  font-family: Certege, sans-serif;
+  font-style: italic;
+}
+.the_formula-felt,
+.the_formula-leather {
+  display: inline-block;
+  text-align: center;
+  outline: 2px dashed #212121;
+}
+.the_formula-felt {
+  position: relative;
+}
+.the_formula-felt:before {
+  position: absolute;
+  top: -28px;
+  left: 0;
+  right: 0;
+  display: block;
+  content: attr(data-width);
+  text-align: center;
+}
+.the_formula-felt:after {
+  position: absolute;
+  top: 30%;
+  right: 100%;
+  display: block;
+  margin-right: 12px;
+  content: attr(data-height);
+}
+.the_formula-leather {
+  position: absolute;
+}
+.the_formula-leather:before {
+  position: absolute;
+  top: -28px;
+  left: 0;
+  right: 0;
+  display: block;
+  content: attr(data-width);
+  text-align: center;
+}
+.the_formula-leather:after {
+  position: absolute;
+  top: 40%;
+  left: 0;
+  display: block;
+  margin-left: 6px;
+  content: attr(data-height);
+}
+body {
+  display: table;
+  width: 100%;
+}
