@@ -23,10 +23,12 @@
         <div class="the_formula-leather"
           v-style="
             width: patterns.leather.width + 'mm',
-            height: patterns.leather.height + 'mm',
+            height: patterns.leather.visibleHeight + 'mm',
             left: params.margin + params.padding + 'mm',
             top: '10mm'"
-          v-attr="data-width: patterns.leather.width, data-height: patterns.leather.height">
+          v-attr="
+            data-width: patterns.leather.width,
+            data-height: patterns.leather.visibleHeight + ' (' + patterns.leather.height + ')'">
         </div>
       </div>
     </div>
