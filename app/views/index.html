@@ -20,15 +20,42 @@
         v-style="width: patterns.felt.width + 'mm', height: patterns.felt.height + 'mm'"
         v-attr="data-width: patterns.felt.width, data-height: patterns.felt.height">
 
+        <div class="the_formula-felt_border" v-style="top: params.lug + 'mm'"></div>
+        <div class="the_formula-felt_border" v-style="top: (patterns.felt.height + params.lug) / 2 + 'mm'"></div>
+
         <div class="the_formula-leather"
           v-style="
             width: patterns.leather.width + 'mm',
-            height: patterns.leather.visibleHeight + 'mm',
-            left: params.margin + params.padding + 'mm',
-            top: '10mm'"
+            height: patterns.leather.smallHeight + 'mm',
+            left: pocketPosition.left + 'mm',
+            bottom: pocketPosition.bottom +'mm'"
           v-attr="
             data-width: patterns.leather.width,
             data-height: patterns.leather.visibleHeight + ' (' + patterns.leather.height + ')'">
+        </div>
+
+        <div class="the_formula-leather_pocket"
+          v-style="
+            width: patterns.leather.width + 'mm',
+            height: pocket.leg + 'mm',
+            left: pocketPosition.left + 'mm',
+            bottom: (pocketPosition.bottom - pocket.leg) +'mm'">
+
+            <div class="pocket-border pocket-border--left" v-style="
+              width: pocket.hypotenuse + 'mm',
+              bottom: pocket.leg + 'mm',
+              -webkit-transform: 'rotate(' + pocket.angle + 'deg)',
+              -ms-transform: 'rotate(' + (-pocket.angle) + 'deg)',
+              transform: 'rotate(' + pocket.angle + 'deg)'">
+            </div>
+
+            <div class="pocket-border pocket-border--right" v-style="
+              width: pocket.hypotenuse + 'mm',
+              bottom: pocket.leg + 'mm',
+              -webkit-transform: 'rotate(' + (-pocket.angle) + 'deg)',
+              -ms-transform: 'rotate(' + (-pocket.angle) + 'deg)',
+              transform: 'rotate(' + pocket.angle + 'deg)'">
+            </div>
         </div>
       </div>
     </div>
