@@ -37,3 +37,16 @@ describe 'Views.Formula', ->
       it 'returns computed leather pattern data', ->
         expect(@leather.width).toEqual(65)
         expect(@leather.height).toEqual(97.12)
+
+  describe 'pocket', ->
+    beforeEach ->
+      @pocket = @view.pocket
+
+    it 'calculates pocket angle', ->
+      expect(parseInt(@pocket.angle)).toEqual(28)
+
+    it 'calculates pocket hypotenuse', ->
+      expect(parseInt(@pocket.hypotenuse)).toEqual(37)
+
+    it 'returns pocket leg', ->
+      expect(@pocket.leg).toEqual(18)
