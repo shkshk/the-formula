@@ -24,8 +24,8 @@
           v-style="
             width: patterns.leather.width + 'mm',
             height: patterns.leather.smallHeight + 'mm',
-            left: params.margin + params.padding + 'mm',
-            top: '10mm'"
+            left: pocketPosition.left + 'mm',
+            bottom: pocketPosition.bottom +'mm'"
           v-attr="
             data-width: patterns.leather.width,
             data-height: patterns.leather.visibleHeight + ' (' + patterns.leather.height + ')'">
@@ -35,8 +35,8 @@
           v-style="
             width: patterns.leather.width + 'mm',
             height: pocket.leg + 'mm',
-            left: params.margin + params.padding + 'mm',
-            top: patterns.leather.smallHeight + 10 +'mm'">
+            left: pocketPosition.left + 'mm',
+            bottom: (pocketPosition.bottom - pocket.leg) +'mm'">
 
             <div class="pocket-border pocket-border--left" v-style="
               width: pocket.hypotenuse + 'mm',
