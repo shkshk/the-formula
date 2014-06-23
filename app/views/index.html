@@ -20,6 +20,9 @@
         v-style="width: patterns.felt.width + 'mm', height: patterns.felt.height + 'mm'"
         v-attr="data-width: patterns.felt.width, data-height: patterns.felt.height">
 
+        <div class="the_formula-felt_border" v-style="top: params.lug + 'mm'"></div>
+        <div class="the_formula-felt_border" v-style="top: (patterns.felt.height + params.lug) / 2 + 'mm'"></div>
+
         <div class="the_formula-leather"
           v-style="
             width: patterns.leather.width + 'mm',
