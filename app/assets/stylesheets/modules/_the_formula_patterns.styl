@@ -8,7 +8,8 @@
 .the_formula-felt, .the_formula-leather
   display: inline-block
   text-align: center
-  outline: 2px dashed $text-color
+  border: 2px dashed $text-color
+  box-sizing: border-box
 
 .the_formula-felt
   position: relative
@@ -32,6 +33,7 @@
 
 .the_formula-leather
   position: absolute
+  border-bottom: none
 
   &:before
     position: absolute
