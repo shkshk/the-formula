@@ -94,6 +94,24 @@ module.exports = {
   computed: {
     patterns: function() {
       return Formula.calculate(this.params);
+    },
+    pocketPosition: function() {
+      return {
+        left: this.params.margin + this.params.padding,
+        bottom: this.params.lug + (this.patterns.felt.height / 2) + 18
+      };
+    },
+    pocket: function() {
+      var angle, hypotenuse, leather, leg;
+      leather = this.patterns.leather;
+      leg = leather.visibleHeight - leather.smallHeight;
+      hypotenuse = Math.sqrt(Math.pow(leg, 2) + Math.pow(leather.width / 2, 2));
+      angle = (Math.asin(leg / hypotenuse) / Math.PI) * 180;
+      return {
+        leg: leg,
+        hypotenuse: hypotenuse,
+        angle: angle
+      };
     }
   }
 };
