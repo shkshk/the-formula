@@ -15,7 +15,7 @@ module.exports = class Formula
   @calculate: (params = {}) ->
     params = @_prepare(params)
     feltDimensions = @_calculateFeltDimensions(params)
-    leatherDimensions = @_calculateLeatherDimensions(params, feltDimensions)
+    leatherDimensions = @_calculateLeatherParams(params, feltDimensions)
     { felt: feltDimensions, leather: leatherDimensions}
 
   @_prepare: (params) ->
@@ -30,11 +30,13 @@ module.exports = class Formula
       height: (params.height * 2) + params.depth + params.felt_depth + params.vertical_power + params.lug
     }
 
-  @_calculateLeatherDimensions: (params, felt) ->
+  @_calculateLeatherParams: (params, felt) ->
     visibleHeight = (params.height + params.lug) * 0.66
     {
       width: felt.width - (2 * (params.margin + params.padding))
       height: visibleHeight + 10
       visibleHeight: visibleHeight
       smallHeight: visibleHeight - 18 # FIXME: why 18?
+      left: params.margin + params.padding
+      bottom: params.lug + (felt.height / 2) + 18
     }

@@ -7,11 +7,6 @@ module.exports =
     params: _.merge({}, Formula.DEFAULTS, { width: 59, height: 124, depth: 8 })
   computed:
     patterns: -> Formula.calculate(@params)
-    pocketPosition: ->
-      {
-        left: @params.margin + @params.padding
-        bottom: @params.lug + (@patterns.felt.height / 2) + 18 # FIXME: again, 18?
-      }
 
     pocket: ->
       leather = @patterns.leather
