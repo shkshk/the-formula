@@ -11,9 +11,7 @@
   border: 2px dashed $text-color
   box-sizing: border-box
 
-.blueprint-felt
-  position: relative
-
+pattern-dimensions()
   &:before
     position: absolute
     top: -28px
@@ -31,6 +29,10 @@
     margin-right: 12px
     content: attr(data-height)
 
+.blueprint-felt
+  position: relative
+  pattern-dimensions()
+
   &_border
     position: absolute
     left: 0
@@ -41,20 +43,9 @@
   position: absolute
   margin-left: -2px
   border-bottom: none
-
-  &:before
-    position: absolute
-    top: -28px
-    left: 0
-    right: 0
-    display: block
-    content: attr(data-width)
-    text-align: center
+  pattern-dimensions()
 
   &:after
-    position: absolute
     top: 40%
     left: 0
-    display: block
     margin-left: 6px
-    content: attr(data-height)
