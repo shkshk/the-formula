@@ -25,3 +25,8 @@ describe 'Models.Formula', ->
         expect(leather.height).toEqual(114.28)
         expect(leather.visibleHeight).toEqual(104.28)
         expect(leather.smallHeight).toEqual(86.28)
+
+      it 'calculates leather pattern position', ->
+        leather = @results.leather
+        expect(leather.left).toEqual(7)
+        expect(leather.bottom).toEqual(187.5)

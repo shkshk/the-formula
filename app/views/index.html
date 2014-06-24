@@ -15,37 +15,38 @@
         <div><input type="text" v-model="params.depth" /></div>
       </fieldset>
     </form>
-    <div class="the_formula-patterns">
-      <div class="the_formula-felt"
+
+    <div class="blueprint-patterns">
+      <div class="blueprint-felt"
         v-style="width: patterns.felt.width + 'mm', height: patterns.felt.height + 'mm'"
         v-attr="data-width: patterns.felt.width, data-height: patterns.felt.height">
 
-        <div class="the_formula-felt_border" v-style="top: params.lug + 'mm'"></div>
-        <div class="the_formula-felt_border" v-style="top: (patterns.felt.height + params.lug) / 2 + 'mm'"></div>
+        <div class="blueprint-felt_border" v-style="top: params.lug + 'mm'"></div>
+        <div class="blueprint-felt_border" v-style="top: (patterns.felt.height + params.lug) / 2 + 'mm'"></div>
 
-        <div class="the_formula-leather"
+        <div class="blueprint-leather"
           v-style="
             width: patterns.leather.width + 'mm',
             height: patterns.leather.smallHeight + 'mm',
-            left: pocketPosition.left + 'mm',
-            bottom: pocketPosition.bottom +'mm'"
+            left: patterns.leather.left + 'mm',
+            bottom: patterns.leather.bottom +'mm'"
           v-attr="
             data-width: patterns.leather.width,
             data-height: patterns.leather.visibleHeight + ' (' + patterns.leather.height + ')'">
         </div>
 
-        <div class="the_formula-leather_pocket"
+        <div class="blueprint-leather_pocket"
           v-style="
             width: patterns.leather.width + 'mm',
             height: pocket.leg + 'mm',
-            left: pocketPosition.left + 'mm',
-            bottom: (pocketPosition.bottom - pocket.leg) +'mm'">
+            left: patterns.leather.left + 'mm',
+            bottom: (patterns.leather.bottom - pocket.leg) +'mm'">
 
             <div class="pocket-border pocket-border--left" v-style="
               width: pocket.hypotenuse + 'mm',
               bottom: pocket.leg + 'mm',
               -webkit-transform: 'rotate(' + pocket.angle + 'deg)',
-              -ms-transform: 'rotate(' + (-pocket.angle) + 'deg)',
+              -ms-transform: 'rotate(' + pocket.angle + 'deg)',
               transform: 'rotate(' + pocket.angle + 'deg)'">
             </div>
 
@@ -54,7 +55,7 @@
               bottom: pocket.leg + 'mm',
               -webkit-transform: 'rotate(' + (-pocket.angle) + 'deg)',
               -ms-transform: 'rotate(' + (-pocket.angle) + 'deg)',
-              transform: 'rotate(' + pocket.angle + 'deg)'">
+              transform: 'rotate(' + (-pocket.angle) + 'deg)'">
             </div>
         </div>
       </div>
