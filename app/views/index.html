@@ -15,6 +15,7 @@
         <div><input type="text" v-model="params.depth" /></div>
       </fieldset>
     </form>
+
     <div class="the_formula-patterns">
       <div class="the_formula-felt"
         v-style="width: patterns.felt.width + 'mm', height: patterns.felt.height + 'mm'"
@@ -45,7 +46,7 @@
               width: pocket.hypotenuse + 'mm',
               bottom: pocket.leg + 'mm',
               -webkit-transform: 'rotate(' + pocket.angle + 'deg)',
-              -ms-transform: 'rotate(' + (-pocket.angle) + 'deg)',
+              -ms-transform: 'rotate(' + pocket.angle + 'deg)',
               transform: 'rotate(' + pocket.angle + 'deg)'">
             </div>
 
@@ -54,7 +55,7 @@
               bottom: pocket.leg + 'mm',
               -webkit-transform: 'rotate(' + (-pocket.angle) + 'deg)',
               -ms-transform: 'rotate(' + (-pocket.angle) + 'deg)',
-              transform: 'rotate(' + pocket.angle + 'deg)'">
+              transform: 'rotate(' + (-pocket.angle) + 'deg)'">
             </div>
         </div>
       </div>
