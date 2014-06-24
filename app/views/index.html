@@ -16,15 +16,15 @@
       </fieldset>
     </form>
 
-    <div class="the_formula-patterns">
-      <div class="the_formula-felt"
+    <div class="blueprint-patterns">
+      <div class="blueprint-felt"
         v-style="width: patterns.felt.width + 'mm', height: patterns.felt.height + 'mm'"
         v-attr="data-width: patterns.felt.width, data-height: patterns.felt.height">
 
-        <div class="the_formula-felt_border" v-style="top: params.lug + 'mm'"></div>
-        <div class="the_formula-felt_border" v-style="top: (patterns.felt.height + params.lug) / 2 + 'mm'"></div>
+        <div class="blueprint-felt_border" v-style="top: params.lug + 'mm'"></div>
+        <div class="blueprint-felt_border" v-style="top: (patterns.felt.height + params.lug) / 2 + 'mm'"></div>
 
-        <div class="the_formula-leather"
+        <div class="blueprint-leather"
           v-style="
             width: patterns.leather.width + 'mm',
             height: patterns.leather.smallHeight + 'mm',
@@ -35,7 +35,7 @@
             data-height: patterns.leather.visibleHeight + ' (' + patterns.leather.height + ')'">
         </div>
 
-        <div class="the_formula-leather_pocket"
+        <div class="blueprint-leather_pocket"
           v-style="
             width: patterns.leather.width + 'mm',
             height: pocket.leg + 'mm',
