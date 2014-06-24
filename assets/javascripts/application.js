@@ -35,7 +35,7 @@ module.exports = Formula = (function() {
     }
     params = this._prepare(params);
     feltDimensions = this._calculateFeltDimensions(params);
-    leatherDimensions = this._calculateLeatherDimensions(params, feltDimensions);
+    leatherDimensions = this._calculateLeatherParams(params, feltDimensions);
     return {
       felt: feltDimensions,
       leather: leatherDimensions
@@ -59,14 +59,16 @@ module.exports = Formula = (function() {
     };
   };
 
-  Formula._calculateLeatherDimensions = function(params, felt) {
+  Formula._calculateLeatherParams = function(params, felt) {
     var visibleHeight;
     visibleHeight = (params.height + params.lug) * 0.66;
     return {
       width: felt.width - (2 * (params.margin + params.padding)),
       height: visibleHeight + 10,
       visibleHeight: visibleHeight,
-      smallHeight: visibleHeight - 18
+      smallHeight: visibleHeight - 18,
+      left: params.margin + params.padding,
+      bottom: params.lug + (felt.height / 2) + 18
     };
   };
 
@@ -94,12 +96,6 @@ module.exports = {
   computed: {
     patterns: function() {
       return Formula.calculate(this.params);
-    },
-    pocketPosition: function() {
-      return {
-        left: this.params.margin + this.params.padding,
-        bottom: this.params.lug + (this.patterns.felt.height / 2) + 18
-      };
     },
     pocket: function() {
       var angle, hypotenuse, leather, leg;

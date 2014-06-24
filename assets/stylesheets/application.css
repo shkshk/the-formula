@@ -20,15 +20,15 @@ body {
     display: none;
   }
 }
-.the_formula-patterns {
+.blueprint-patterns {
   display: table-cell;
   padding: 2em 1em;
   text-align: center;
   font-family: Certege, sans-serif;
   font-style: italic;
 }
-.the_formula-felt,
-.the_formula-leather {
+.blueprint-felt,
+.blueprint-leather {
   display: inline-block;
   text-align: center;
   border: 2px dashed #212121;
@@ -36,10 +36,10 @@ body {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-.the_formula-felt {
+.blueprint-felt {
   position: relative;
 }
-.the_formula-felt:before {
+.blueprint-felt:before {
   position: absolute;
   top: -28px;
   left: 0;
@@ -48,7 +48,7 @@ body {
   content: attr(data-width);
   text-align: center;
 }
-.the_formula-felt:after {
+.blueprint-felt:after {
   position: absolute;
   top: 30%;
   right: 100%;
@@ -56,18 +56,18 @@ body {
   margin-right: 12px;
   content: attr(data-height);
 }
-.the_formula-felt_border {
+.blueprint-felt_border {
   position: absolute;
   left: 0;
   right: 0;
   border-top: 1px dashed #212121;
 }
-.the_formula-leather {
+.blueprint-leather {
   position: absolute;
   margin-left: -2px;
   border-bottom: none;
 }
-.the_formula-leather:before {
+.blueprint-leather:before {
   position: absolute;
   top: -28px;
   left: 0;
@@ -76,15 +76,20 @@ body {
   content: attr(data-width);
   text-align: center;
 }
-.the_formula-leather:after {
+.blueprint-leather:after {
   position: absolute;
-  top: 40%;
-  left: 0;
+  top: 30%;
+  right: 100%;
   display: block;
-  margin-left: 6px;
+  margin-right: 12px;
   content: attr(data-height);
 }
-.the_formula-leather_pocket {
+.blueprint-leather:after {
+  top: 40%;
+  left: 0;
+  margin-left: 6px;
+}
+.blueprint-leather_pocket {
   position: absolute;
 }
 .pocket-border {
