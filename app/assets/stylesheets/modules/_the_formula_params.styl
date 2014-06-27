@@ -9,9 +9,10 @@
     &
       display: none
 
+.the_formula-params_drawer
+  margin-top: 16px
 
 .main_params
-  margin: 0 0 16px
   font-size: 0
 
   div
@@ -43,8 +44,13 @@
     text-align: center
 
 .additional_params
-  margin: 0 0 16px
+  opacity: 0
+  margin: 24px 0
   font-size: 14px
+  transition: opacity .3s ease
+
+  &.is-visible
+    opacity: 1
 
   div
     margin: 0 0 14px
