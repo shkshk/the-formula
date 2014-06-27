@@ -24,7 +24,7 @@ paths =
 
 buildpaths =
   build: 'build/**/*'
-  views: 'build'
+  root: 'build'
   stylesheets: 'build/assets/stylesheets'
   javascripts: 'build/assets/javascripts'
 
@@ -45,7 +45,7 @@ gulp.task 'clean', (cb) -> rimraf('build/', cb)
 
 gulp.task 'html', ['clean:html'], ->
   gulp.src(paths.views)
-    .pipe(gulp.dest(buildpaths.views))
+    .pipe(gulp.dest(buildpaths.root))
     .pipe(livereload(lr))
 
 gulp.task 'stylesheets', ['clean:stylesheets'], ->
@@ -61,7 +61,8 @@ gulp.task 'javascripts', ['clean:javascripts'], ->
     .pipe(gulp.dest(buildpaths.javascripts))
     .pipe(livereload(lr))
 
-gulp.task 'build', ['html', 'stylesheets', 'javascripts']
+gulp.task 'build', ['html', 'stylesheets', 'javascripts'], ->
+  gulp.src('CNAME').pipe(gulp.dest(buildpaths.root))
 
 gulp.task 'serve', ['build'], ->
   lr.listen(lrport)
