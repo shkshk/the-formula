@@ -3,16 +3,59 @@
 <head>
   <meta charset="UTF-8">
   <title>The Formula</title>
-  <link rel="stylesheet" href="http://openfontlibrary.org/face/certege-italic" type="text/css"/>
   <link rel="stylesheet" href="assets/stylesheets/application.css">
 </head>
 <body>
   <div id="the_formula" class="the_formula">
     <form class="the_formula-params">
-      <fieldset>
-        <div><input type="text" v-model="params.width" /></div>
-        <div><input type="text" v-model="params.height" /></div>
-        <div><input type="text" v-model="params.depth" /></div>
+      <fieldset class="main_params">
+        <div>
+          <label for="f-width">Ширина</label>
+          <input type="text" id="f-width" v-model="params.width" />
+        </div>
+        <div>
+          <label for="f-height">Высота</label>
+          <input type="text" id="f-height" v-model="params.height" />
+        </div>
+        <div>
+          <label for="f-depth">Толщина</label>
+          <input type="text" id="f-depth" v-model="params.depth" />
+        </div>
+      </fieldset>
+
+      <div class="the_formula-params_drawer">
+        <button type="button"
+          class="pseudo_link pseudo_link--small {{ additionalParamsVisible ? 'is-active' : '' }}"
+          v-on="click: additionalParamsVisible = !additionalParamsVisible">
+          Больше параметров
+        </button>
+      </div>
+
+      <fieldset class="additional_params {{ additionalParamsVisible ? 'is-visible' : '' }}">
+        <div>
+          <label for="f-felt_depth">Толщина фетра</label>
+          <input type="text" id="f-felt_depth" v-model="params.felt_depth" />
+        </div>
+        <div>
+          <label for="f-margin">От края до строчки</label>
+          <input type="text" id="f-margin" v-model="params.margin" />
+        </div>
+        <div>
+          <label for="f-padding">От строчки до кожи</label>
+          <input type="text" id="f-padding" v-model="params.padding" />
+        </div>
+        <div>
+          <label for="f-lug">«Язычок»</label>
+          <input type="text" id="f-lug" v-model="params.lug" />
+        </div>
+        <div>
+          <label for="f-power">Постоянная Мощнуши</label>
+          <input type="text" id="f-power" v-model="params.power" />
+        </div>
+        <div>
+          <label for="f-vertical_power">Вертикальная мощность</label>
+          <input type="text" id="f-vertical_power" v-model="params.vertical_power" />
+        </div>
       </fieldset>
     </form>
 
