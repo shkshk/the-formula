@@ -79,7 +79,7 @@ gulp.task 'deploy', ['build'], ->
   gulp.src(buildpaths.build)
     .pipe(deploy())
 
-gulp.task 'deploy:travis', ['build'], ->
+gulp.task 'deploy:ci', ['build'], ->
   gulp.src(buildpaths.build)
     .pipe(deploy(remoteUrl: process.env.GH_REPO_URL))
 
