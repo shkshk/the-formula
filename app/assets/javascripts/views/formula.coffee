@@ -86,5 +86,5 @@ module.exports = React.createClass
         </fieldset>
       </form>
 
-      <FormulaPattern patterns={this.patterns()} />
+      <FormulaPattern patterns={this.patterns()} params={this.state} />
     </div>`
