@@ -17,10 +17,10 @@ deploy = require('gulp-gh-pages')
 paths =
   views: 'app/views/**/*.html'
   stylesheets: 'app/assets/stylesheets/**/*.styl'
-  javascripts: 'app/assets/javascripts/**/*.coffee'
+  javascripts: 'app/assets/javascripts/**/*.{cjsx,coffee}'
   mainstylesheet: 'app/assets/stylesheets/application.styl'
-  mainscript: 'app/assets/javascripts/application.coffee'
-  testFiles: ['app/assets/javascripts/modules/*.coffee', 'test/**/*.coffee']
+  mainscript: 'app/assets/javascripts/application.cjsx'
+  testFiles: ['test/**/*.coffee']
 
 buildpaths =
   build: 'build/**/*'
@@ -36,7 +36,7 @@ lr = tinylr()
 server = express()
 server.use(require('connect-livereload')())
 server.use(express.static('./build'))
-bundler = browserify(entries: ['./' + paths.mainscript], extenstions: ['.coffee'])
+bundler = browserify(entries: ['./' + paths.mainscript], extenstions: ['.coffee', '.csjx'])
 
 gulp.task 'clean:html', (cb) -> rimraf('build/**/*.html', cb)
 gulp.task 'clean:stylesheets', (cb) -> rimraf('build/assets/stylesheets', cb)

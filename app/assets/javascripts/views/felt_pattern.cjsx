@@ -5,9 +5,9 @@ module.exports = React.createClass
       width: data.width + "mm"
       height: data.height + "mm"
 
-    `<div className="blueprint-felt"
+    <div className="blueprint-felt"
       style={style}
       data-width={data.width}
       data-height={data.height}>
-        {this.props.children}
-     </div>`
+        {@props.children}
+     </div>

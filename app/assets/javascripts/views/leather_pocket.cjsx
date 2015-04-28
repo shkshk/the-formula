@@ -21,7 +21,7 @@ module.exports = React.createClass
       left: leather.left + "mm"
       bottom: (leather.bottom - pocket.leg) + "mm"
 
-    `<div className="blueprint-leather_pocket" style={style}>
-      <div className="pocket-border pocket-border--left" style={this.leftBorderStyle(pocket)} />
-      <div className="pocket-border pocket-border--right" style={this.rightBorderStyle(pocket)} />
-     </div>`
+    <div className="blueprint-leather_pocket" style={style}>
+      <div className="pocket-border pocket-border--left" style={@leftBorderStyle(pocket)} />
+      <div className="pocket-border pocket-border--right" style={@rightBorderStyle(pocket)} />
+     </div>

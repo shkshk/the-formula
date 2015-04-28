@@ -18,13 +18,7 @@
   },
   "browserify": {
     "transform": [
-      "coffeeify",
-      [
-        "reactify",
-        {
-          "extension": "coffee"
-        }
-      ]
+      "cjsxify"
     ]
   },
   "dependencies": {
@@ -50,8 +44,8 @@
     "karma-jasmine": "~0.1.5",
     "gulp-autoprefixer": "0.0.7",
     "gulp-gh-pages": "~0.3.2",
-    "reactify": "~1.1.0",
     "react": "~0.13.2",
-    "classnames": "~1.2.1"
+    "classnames": "~1.2.1",
+    "cjsxify": "~0.3.0"
   }
 }

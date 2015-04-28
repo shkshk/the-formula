@@ -7,7 +7,7 @@ module.exports = React.createClass
       left: data.left + "mm"
       bottom: data.bottom + "mm"
 
-    `<div className="blueprint-leather"
+    <div className="blueprint-leather"
       style={style}
       data-width={data.width}
-      data-height={data.visibleHeight + '(' + data.height + ')'} />`
+      data-height={data.visibleHeight + '(' + data.height + ')'} />
