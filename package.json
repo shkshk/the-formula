@@ -4,7 +4,8 @@
   "description": "shkshk.ru secret formula",
   "main": "index.js",
   "scripts": {
-    "test": "gulp test"
+    "test": "gulp test",
+    "start": "gulp serve"
   },
   "repository": {
     "type": "git",

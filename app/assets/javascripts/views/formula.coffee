@@ -2,7 +2,7 @@ _ = require("lodash")
 classnames = require("classnames")
 
 Formula = require("../models/formula.coffee")
-FormulaPattern = require("./formula_pattern.coffee")
+Blueprint = require("./blueprint.coffee")
 
 module.exports = React.createClass
   mixins: [React.addons.LinkedStateMixin]
@@ -86,5 +86,5 @@ module.exports = React.createClass
         </fieldset>
       </form>
 
-      <FormulaPattern patterns={this.patterns()} params={this.state} />
+      <Blueprint patterns={this.patterns()} params={this.state} />
     </div>`
