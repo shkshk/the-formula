@@ -2,8 +2,8 @@ _ = require("lodash")
 
 Formula = require("../models/formula.coffee")
 Blueprint = require("./blueprint.cjsx")
-Params = require("./params.cjsx")
-AdditionalParams = require("./additional_params.cjsx")
+Params = require("./params/main.cjsx")
+AdditionalParams = require("./params/additional.cjsx")
 
 DEFAULT_IPHONE_DIMENSIONS =
   width: 59

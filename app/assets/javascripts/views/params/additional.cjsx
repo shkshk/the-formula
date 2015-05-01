@@ -1,6 +1,6 @@
 classnames = require("classnames")
 Input = require("./input.cjsx")
-Drawer = require("./params_drawer.cjsx")
+Drawer = require("./drawer.cjsx")
 
 module.exports = React.createClass
   getInitialState: -> { visible: false }
