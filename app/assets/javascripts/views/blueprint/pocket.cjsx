@@ -1,15 +1,14 @@
 module.exports = React.createClass
   leftBorderStyle: (pocket) ->
-    width: pocket.hypotenuse + "mm"
-    bottom: pocket.leg + "mm"
-    "-webkit-transform": "rotate(#{pocket.angle}deg)"
-    transform: "rotate(#{pocket.angle}deg)"
+    @borderStyle(pocket, pocket.angle)
 
   rightBorderStyle: (pocket) ->
+    @borderStyle(pocket, -pocket.angle)
+
+  borderStyle: (pocket, deg) ->
     width: pocket.hypotenuse + "mm"
     bottom: pocket.leg + "mm"
-    "-webkit-transform": "rotate(#{-pocket.angle}deg)"
-    transform: "rotate(#{-pocket.angle}deg)"
+    transform: "rotate(#{deg}deg)"
 
   render: ->
     pocket = @props.pocket
