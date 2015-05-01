@@ -1,18 +1,12 @@
 classnames = require("classnames")
 Input = require("./input.cjsx")
+Drawer = require("./params_drawer.cjsx")
 
 module.exports = React.createClass
   getInitialState: -> { visible: false }
 
   toggleVisibility: ->
     @setState(visible: !@state.visible)
-
-  togglerClasses: ->
-    classnames(
-      "pseudo_link": true
-      "pseudo_link--small": true
-      "is-active": @state.visible
-    )
 
   fieldsetClasses: ->
     classnames(
@@ -22,11 +16,7 @@ module.exports = React.createClass
 
   render: ->
     <div>
-      <div className="the_formula-params_drawer">
-        <button type="button" className={@togglerClasses()} onClick={@toggleVisibility}>
-          Больше параметров
-        </button>
-      </div>
+      <Drawer active={@state.visible} onChange={@toggleVisibility} />
 
       <fieldset className={@fieldsetClasses()}>
         <Input name="felt_depth"
