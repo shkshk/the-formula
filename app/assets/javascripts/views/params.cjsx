@@ -1,34 +1,9 @@
-module.exports = React.createClass
-  recalculate: (event) ->
-    input = event.target
-    @props.onChange(input.name, input.value)
+Input = require("./input.cjsx")
 
+module.exports = React.createClass
   render: ->
     <fieldset className="main_params">
-      <div>
-        <label htmlFor="f-width">Ширина</label>
-        <input type="text"
-          id="f-width"
-          name="width"
-          value={@props.width}
-          onChange={@recalculate} />
-      </div>
-
-      <div>
-        <label htmlFor="f-height">Высота</label>
-        <input type="text"
-          id="f-height"
-          name="height"
-          value={@props.height}
-          onChange={@recalculate} />
-      </div>
-
-      <div>
-        <label htmlFor="f-depth">Толщина</label>
-        <input type="text"
-          id="f-depth"
-          name="depth"
-          value={@props.depth}
-          onChange={@recalculate} />
-      </div>
+      <Input name="width" title="Ширина" value={@props.width} onChange={@props.onChange} />
+      <Input name="height" title="Высота" value={@props.height} onChange={@props.onChange} />
+      <Input name="depth" title="Толщина" value={@props.depth} onChange={@props.onChange} />
     </fieldset>

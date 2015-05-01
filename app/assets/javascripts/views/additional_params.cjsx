@@ -1,4 +1,5 @@
 classnames = require("classnames")
+Input = require("./input.cjsx")
 
 module.exports = React.createClass
   getInitialState: -> { visible: false }
@@ -19,10 +20,6 @@ module.exports = React.createClass
       "is-visible": @state.visible
     )
 
-  recalculate: (event) ->
-    input = event.target
-    @props.onChange(input.name, input.value)
-
   render: ->
     <div>
       <div className="the_formula-params_drawer">
@@ -32,58 +29,34 @@ module.exports = React.createClass
       </div>
 
       <fieldset className={@fieldsetClasses()}>
-        <div>
-          <label htmlFor="f-felt_depth">Толщина фетра</label>
-          <input type="text"
-            name="felt_depth"
-            id="f-felt_depth"
-            value={@props.felt_depth}
-            onChange={@recalculate} />
-        </div>
+        <Input name="felt_depth"
+          title="Толщина фетра"
+          value={@props.felt_depth}
+          onChange={@props.onChange} />
 
-        <div>
-          <label htmlFor="f-margin">От края до строчки</label>
-          <input type="text"
-            name="margin"
-            id="f-margin"
-            value={@props.margin}
-            onChange={@recalculate} />
-        </div>
+        <Input name="margin"
+          title="От края до строчки"
+          value={@props.margin}
+          onChange={@props.onChange} />
 
-        <div>
-          <label htmlFor="f-padding">От строчки до кожи</label>
-          <input type="text"
-            name="padding"
-            id="f-padding"
-            value={@props.padding}
-            onChange={@recalculate} />
-        </div>
+        <Input name="padding"
+          title="От строчки до кожи"
+          value={@props.padding}
+          onChange={@props.onChange} />
 
-        <div>
-          <label htmlFor="f-lug">«Язычок»</label>
-          <input type="text"
-            name="lug"
-            id="f-lug"
-            value={@props.lug}
-            onChange={@recalculate} />
-        </div>
+        <Input name="lug"
+          title="«Язычок»"
+          value={@props.lug}
+          onChange={@props.onChange} />
 
-        <div>
-          <label htmlFor="f-power">Постоянная Мощнуши</label>
-          <input type="text"
-            name="power"
-            id="f-power"
-            value={@props.power}
-            onChange={@recalculate} />
-        </div>
+        <Input name="power"
+          title="Постоянная Мощнуши"
+          value={@props.power}
+          onChange={@props.onChange} />
 
-        <div>
-          <label htmlFor="f-vertical_power">Вертикальная мощность</label>
-          <input type="text"
-            name="vertical_power"
-            id="f-vertical_power"
-            value={@props.vertical_power}
-            onChange={@recalculate} />
-        </div>
+        <Input name="vertical_power"
+          title="Вертикальная мощность"
+          value={@props.vertical_power}
+          onChange={@props.onChange} />
       </fieldset>
     </div>

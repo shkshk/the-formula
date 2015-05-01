@@ -17,6 +17,10 @@ module.exports = React.createClass
   patterns: ->
     Formula.calculate(@state)
 
+  recalculate: (event) ->
+    input = event.target
+    @updateParam(input.name, input.value)
+
   updateParam: (param, value) ->
     newState = {}
     newState[param] = value
@@ -26,12 +30,12 @@ module.exports = React.createClass
   render: ->
     <div id="the_formula" className="the_formula">
       <form className="the_formula-params">
-        <Params onChange={@updateParam}
+        <Params onChange={@recalculate}
           width={@state.width}
           height={@state.height}
           depth={@state.depth} />
 
-        <AdditionalParams onChange={@updateParam}
+        <AdditionalParams onChange={@recalculate}
           felt_depth={@state.felt_depth}
           margin={@state.margin}
           padding={@state.padding}
