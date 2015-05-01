@@ -1,7 +1,7 @@
-FeltPattern = require("./felt_pattern.cjsx")
-LeatherPattern = require("./leather_pattern.cjsx")
+Felt = require("./felt.cjsx")
+Leather = require("./leather.cjsx")
 FeltBorder = require("./felt_border.cjsx")
-LeatherPocket = require("./leather_pocket.cjsx")
+Pocket = require("./pocket.cjsx")
 
 module.exports = React.createClass
   pocketData: ->
@@ -17,11 +17,11 @@ module.exports = React.createClass
     params = @props.params
 
     <div className="blueprint-patterns">
-      <FeltPattern pattern={data.felt}>
+      <Felt pattern={data.felt}>
         <FeltBorder top={params.lug} />
         <FeltBorder top={(data.felt.height + params.lug) / 2} />
 
-        <LeatherPattern pattern={data.leather} />
-        <LeatherPocket leather={data.leather} pocket={@pocketData()} />
-      </FeltPattern>
+        <Leather pattern={data.leather} />
+        <Pocket leather={data.leather} pocket={@pocketData()} />
+      </Felt>
      </div>

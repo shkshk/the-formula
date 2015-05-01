@@ -1,7 +1,7 @@
 _ = require("lodash")
 
 Formula = require("../models/formula.coffee")
-Blueprint = require("./blueprint.cjsx")
+Blueprint = require("./blueprint/main.cjsx")
 Params = require("./params/main.cjsx")
 AdditionalParams = require("./params/additional.cjsx")
 
