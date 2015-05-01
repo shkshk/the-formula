@@ -10,8 +10,6 @@ coffee = require('gulp-coffee')
 autoprefixer = require('gulp-autoprefixer')
 browserify = require('browserify')
 source = require('vinyl-source-stream')
-_ = require('lodash')
-karma = require('karma').server
 deploy = require('gulp-gh-pages')
 
 paths =
@@ -30,7 +28,6 @@ buildpaths =
 
 serverport = 4000
 lrport = 35729
-karmaConf = require('./karma.conf.coffee')
 
 lr = tinylr()
 server = express()
@@ -71,9 +68,6 @@ gulp.task 'serve', ['build'], ->
   gulp.watch(paths.stylesheets, ['stylesheets'])
   gulp.watch(paths.javascripts, ['javascripts'])
   gutil.log("Listening on 0.0.0.0:#{serverport}")
-
-gulp.task 'test', (cb) ->
-  karma.start(_.assign({}, karmaConf, { singleRun: true }), cb)
 
 gulp.task 'deploy', ['build'], ->
   gulp.src(buildpaths.build)
