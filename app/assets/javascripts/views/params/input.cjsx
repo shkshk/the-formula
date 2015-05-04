@@ -1,3 +1,5 @@
+React = require("react")
+
 module.exports = React.createClass
   render: ->
     inputId = "f-#{@props.name}"

@@ -1,10 +1,19 @@
-var coffee = require("coffee-script");
+var cjsxify = require("cjsxify");
 
 module.exports = {
   process: function(src, path) {
-    // CoffeeScript files can be .coffee, .litcoffee, or .coffee.md
-    if (coffee.helpers.isCoffee(path)) {
-      return coffee.compile(src, {"bare": true});
+    if (cjsxify.isCjsx(path)) {
+      var result;
+
+      cjsxify.compile(path, src, function(error, js) {
+        if (error) {
+          throw new Error("Can't parse " + path);
+        } else {
+          result = js;
+        }
+      });
+
+      return result;
     }
 
     return src;

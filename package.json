@@ -23,8 +23,19 @@
   },
   "jest": {
     "scriptPreprocessor": "jest_preprocessor.js",
-    "testFileExtensions": ["coffee", "js"],
-    "moduleFileExtensions": ["coffee", "cjsx", "js"]
+    "testFileExtensions": [
+      "coffee",
+      "cjsx",
+      "js"
+    ],
+    "moduleFileExtensions": [
+      "coffee",
+      "cjsx",
+      "js"
+    ],
+    "unmockedModulePathPatterns": [
+      "node_modules/react"
+    ]
   },
   "dependencies": {
     "gulp": "3.8.0",
