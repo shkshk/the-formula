@@ -7,7 +7,7 @@ module.exports = {
 
       cjsxify.compile(path, src, function(error, js) {
         if (error) {
-          throw new Error("Can't parse " + path);
+          throw new Error("Can't parse " + path + "\n " + error);
         } else {
           result = js;
         }
