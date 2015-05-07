@@ -1,3 +1,4 @@
+React = require("react")
 Input = require("./input.cjsx")
 
 module.exports = React.createClass
