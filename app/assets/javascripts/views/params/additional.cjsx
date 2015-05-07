@@ -1,4 +1,5 @@
 classnames = require("classnames")
+React = require("react")
 Input = require("./input.cjsx")
 Drawer = require("./drawer.cjsx")
 
