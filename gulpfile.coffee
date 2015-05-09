@@ -9,6 +9,7 @@ stylus = require('gulp-stylus')
 coffee = require('gulp-coffee')
 autoprefixer = require('gulp-autoprefixer')
 browserify = require('browserify')
+cjsxify = require('cjsxify')
 source = require('vinyl-source-stream')
 deploy = require('gulp-gh-pages')
 
@@ -33,7 +34,11 @@ lr = tinylr()
 server = express()
 server.use(require('connect-livereload')())
 server.use(express.static('./build'))
-bundler = browserify(entries: ['./' + paths.mainscript], extenstions: ['.coffee', '.csjx'])
+bundler = browserify(
+  entries: ['./' + paths.mainscript],
+  extensions: ['.cjsx', '.coffee'],
+  paths: ['./app/javascripts']
+)
 
 gulp.task 'clean:html', (cb) -> rimraf('build/**/*.html', cb)
 gulp.task 'clean:stylesheets', (cb) -> rimraf('build/stylesheets', cb)
@@ -53,7 +58,8 @@ gulp.task 'stylesheets', ['clean:stylesheets'], ->
     .pipe(livereload(lr))
 
 gulp.task 'javascripts', ['clean:javascripts'], ->
-    bundler.bundle()
+  bundler.transform('cjsxify')
+    .bundle()
     .pipe(source('application.js'))
     .pipe(gulp.dest(buildpaths.javascripts))
     .pipe(livereload(lr))

@@ -2,8 +2,8 @@ classnames = require("classnames")
 React = require("react")
 PureRenderMixin = require("react/addons").addons.PureRenderMixin
 
-Input = require("./input.cjsx")
-Drawer = require("./drawer.cjsx")
+Input = require("./input")
+Drawer = require("./drawer")
 
 module.exports = React.createClass
   mixins: [PureRenderMixin]

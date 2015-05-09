@@ -1,9 +1,9 @@
 React = require("react")
 PureRenderMixin = require("react/addons").addons.PureRenderMixin
-Felt = require("./felt.cjsx")
-Leather = require("./leather.cjsx")
-FeltBorder = require("./feltBorder.cjsx")
-Pocket = require("./pocket.cjsx")
+Felt = require("./felt")
+Leather = require("./leather")
+FeltBorder = require("./feltBorder")
+Pocket = require("./pocket")
 
 module.exports = React.createClass
   mixins: [PureRenderMixin]

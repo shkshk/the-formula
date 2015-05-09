@@ -16,11 +16,6 @@
   "bugs": {
     "url": "https://github.com/shkshk/the-formula/issues"
   },
-  "browserify": {
-    "transform": [
-      "cjsxify"
-    ]
-  },
   "jest": {
     "scriptPreprocessor": "jest_preprocessor.js",
     "testFileExtensions": [
