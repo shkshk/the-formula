@@ -1,4 +1,4 @@
-lib = "../../../app/javascripts/views/blueprint/pocket.cjsx"
+lib = "../pocket.cjsx"
 
 jest.dontMock(lib)
 React = require("react/addons")

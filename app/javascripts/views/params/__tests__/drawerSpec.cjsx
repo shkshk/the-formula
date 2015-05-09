@@ -1,4 +1,4 @@
-lib = "../../../app/javascripts/views/params/drawer.cjsx"
+lib = "../drawer.cjsx"
 
 jest.dontMock(lib)
 jest.dontMock("classnames")

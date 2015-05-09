@@ -1,9 +1,9 @@
-lib = "../../../app/javascripts/views/params/main.cjsx"
+lib = "../main.cjsx"
 
 jest.dontMock(lib)
 React = require("react/addons")
 Params = require(lib)
-Input = require("../../../app/javascripts/views/params/input.cjsx")
+Input = require("../input.cjsx")
 TestUtils = React.addons.TestUtils
 onChange = jest.genMockFunction()
 
