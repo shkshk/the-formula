@@ -1,4 +1,4 @@
-lib = "../../../app/assets/javascripts/views/params/input.cjsx"
+lib = "../../../app/javascripts/views/params/input.cjsx"
 
 jest.dontMock(lib)
 React = require("react/addons")

@@ -1,6 +1,6 @@
 jest.autoMockOff()
 
-Formula = require("../../app/assets/javascripts/models/formula")
+Formula = require("../../app/javascripts/models/formula")
 
 describe "Formula", ->
   describe "#calculate", ->

@@ -1,4 +1,4 @@
-lib = "../../../app/assets/javascripts/views/blueprint/felt.cjsx"
+lib = "../../../app/javascripts/views/blueprint/felt.cjsx"
 
 jest.dontMock(lib)
 React = require("react/addons")

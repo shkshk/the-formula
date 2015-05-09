@@ -1,4 +1,4 @@
-lib = "../../../app/assets/javascripts/views/params/additional.cjsx"
+lib = "../../../app/javascripts/views/params/additional.cjsx"
 
 jest.dontMock(lib)
 jest.dontMock("classnames")
@@ -6,8 +6,8 @@ jest.dontMock("classnames")
 React = require("react/addons")
 AdditionalParams = require(lib)
 
-Input = require("../../../app/assets/javascripts/views/params/input.cjsx")
-Drawer = require("../../../app/assets/javascripts/views/params/drawer.cjsx")
+Input = require("../../../app/javascripts/views/params/input.cjsx")
+Drawer = require("../../../app/javascripts/views/params/drawer.cjsx")
 TestUtils = React.addons.TestUtils
 onChange = jest.genMockFunction()
 
