@@ -1,13 +1,14 @@
-module.exports = React.createClass
-  render: ->
-    data = @props.pattern
-    style =
-      width: data.width + "mm"
-      height: data.height + "mm"
+React = require("react")
 
+module.exports = React.createClass
+  getStyle: ->
+    width: @props.width + "mm"
+    height: @props.height + "mm"
+
+  render: ->
     <div className="blueprint-felt"
-      style={style}
-      data-width={data.width}
-      data-height={data.height}>
+      style={@getStyle()}
+      data-width={@props.width}
+      data-height={@props.height}>
         {@props.children}
      </div>
