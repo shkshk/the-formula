@@ -6,41 +6,42 @@ express = require('express')
 tinylr = require('tiny-lr')
 livereload = require('gulp-livereload')
 stylus = require('gulp-stylus')
-coffee = require('gulp-coffee')
 autoprefixer = require('gulp-autoprefixer')
 browserify = require('browserify')
+cjsxify = require('cjsxify')
 source = require('vinyl-source-stream')
-_ = require('lodash')
-karma = require('karma').server
 deploy = require('gulp-gh-pages')
 
 paths =
   views: 'app/views/**/*.html'
-  stylesheets: 'app/assets/stylesheets/**/*.styl'
-  javascripts: 'app/assets/javascripts/**/*.coffee'
-  mainstylesheet: 'app/assets/stylesheets/application.styl'
-  mainscript: 'app/assets/javascripts/application.coffee'
-  testFiles: ['app/assets/javascripts/modules/*.coffee', 'test/**/*.coffee']
+  stylesheets: 'app/stylesheets/**/*.styl'
+  javascripts: 'app/javascripts/**/*.{cjsx,coffee}'
+  mainstylesheet: 'app/stylesheets/application.styl'
+  mainscript: 'app/javascripts/application.cjsx'
+  testFiles: ['test/**/*.coffee']
 
 buildpaths =
   build: 'build/**/*'
   root: 'build'
-  stylesheets: 'build/assets/stylesheets'
-  javascripts: 'build/assets/javascripts'
+  stylesheets: 'build/stylesheets'
+  javascripts: 'build/javascripts'
 
 serverport = 4000
 lrport = 35729
-karmaConf = require('./karma.conf.coffee')
 
 lr = tinylr()
 server = express()
 server.use(require('connect-livereload')())
 server.use(express.static('./build'))
-bundler = browserify(entries: ['./' + paths.mainscript], extenstions: ['.coffee'])
+bundler = browserify(
+  entries: ['./' + paths.mainscript],
+  extensions: ['.cjsx', '.coffee'],
+  paths: ['./app/javascripts']
+)
 
 gulp.task 'clean:html', (cb) -> rimraf('build/**/*.html', cb)
-gulp.task 'clean:stylesheets', (cb) -> rimraf('build/assets/stylesheets', cb)
-gulp.task 'clean:javascripts', (cb) -> rimraf('build/assets/javascripts', cb)
+gulp.task 'clean:stylesheets', (cb) -> rimraf('build/stylesheets', cb)
+gulp.task 'clean:javascripts', (cb) -> rimraf('build/javascripts', cb)
 gulp.task 'clean', (cb) -> rimraf('build/', cb)
 
 gulp.task 'html', ['clean:html'], ->
@@ -56,7 +57,8 @@ gulp.task 'stylesheets', ['clean:stylesheets'], ->
     .pipe(livereload(lr))
 
 gulp.task 'javascripts', ['clean:javascripts'], ->
-    bundler.bundle()
+  bundler.transform('cjsxify')
+    .bundle()
     .pipe(source('application.js'))
     .pipe(gulp.dest(buildpaths.javascripts))
     .pipe(livereload(lr))
@@ -71,9 +73,6 @@ gulp.task 'serve', ['build'], ->
   gulp.watch(paths.stylesheets, ['stylesheets'])
   gulp.watch(paths.javascripts, ['javascripts'])
   gutil.log("Listening on 0.0.0.0:#{serverport}")
-
-gulp.task 'test', (cb) ->
-  karma.start(_.assign({}, karmaConf, { singleRun: true }), cb)
 
 gulp.task 'deploy', ['build'], ->
   gulp.src(buildpaths.build)
