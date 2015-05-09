@@ -1,13 +1,17 @@
 React = require("react")
+PureRenderMixin = require("react/addons").addons.PureRenderMixin
 
 module.exports = React.createClass
-  render: ->
-    inputId = "f-#{@props.name}"
+  mixins: [PureRenderMixin]
 
+  getInputId: ->
+    "f-#{@props.name}"
+
+  render: ->
     <div>
-      <label htmlFor={inputId}>{@props.title}</label>
+      <label htmlFor={@getInputId()}>{@props.title}</label>
       <input type="number"
-        id={inputId}
+        id={@getInputId()}
         name={@props.name}
         value={@props.value}
         onChange={@props.onChange} />

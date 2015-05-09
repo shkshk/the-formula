@@ -1,4 +1,5 @@
 _ = require("lodash")
+React = require("react")
 
 Formula = require("../models/formula.coffee")
 Blueprint = require("./blueprint/main.cjsx")

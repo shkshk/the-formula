@@ -1,15 +1,19 @@
 classnames = require("classnames")
 React = require("react")
+PureRenderMixin = require("react/addons").addons.PureRenderMixin
+
 Input = require("./input.cjsx")
 Drawer = require("./drawer.cjsx")
 
 module.exports = React.createClass
+  mixins: [PureRenderMixin]
+
   getInitialState: -> { visible: false }
 
   toggleVisibility: ->
     @setState(visible: !@state.visible)
 
-  fieldsetClasses: ->
+  getFieldsetClasses: ->
     classnames(
       "additional_params": true
       "is-visible": @state.visible
@@ -19,7 +23,7 @@ module.exports = React.createClass
     <div>
       <Drawer active={@state.visible} onChange={@toggleVisibility} />
 
-      <fieldset className={@fieldsetClasses()}>
+      <fieldset className={@getFieldsetClasses()}>
         <Input name="felt_depth"
           title="Толщина фетра"
           value={@props.felt_depth}

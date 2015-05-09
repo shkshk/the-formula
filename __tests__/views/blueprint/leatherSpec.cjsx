@@ -8,15 +8,14 @@ TestUtils = React.addons.TestUtils
 describe "Leather", ->
   describe "#render", ->
     beforeEach ->
-      pattern =
-        width: 100
-        height: 50
-        visibleHeight: 40
-        smallHeight: 43
-        left: 10
-        bottom: 20
-
-      @leather = TestUtils.renderIntoDocument(<Leather pattern={pattern}/>)
+      @leather = TestUtils.renderIntoDocument(<Leather
+        width=100
+        height=50
+        visibleHeight=40
+        smallHeight=43
+        left=10
+        bottom=20 />
+      )
       @pattern = TestUtils.findRenderedDOMComponentWithTag(@leather, "div").getDOMNode()
 
     it "renders leather pattern", ->

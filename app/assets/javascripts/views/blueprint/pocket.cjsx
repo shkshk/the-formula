@@ -1,6 +1,9 @@
 React = require("react")
+PureRenderMixin = require("react/addons").addons.PureRenderMixin
 
 module.exports = React.createClass
+  mixins: [PureRenderMixin]
+
   propTypes:
     width: React.PropTypes.number.isRequired
     height: React.PropTypes.number.isRequired

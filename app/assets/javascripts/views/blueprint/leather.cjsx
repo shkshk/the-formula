@@ -1,21 +1,20 @@
 React = require("react")
+PureRenderMixin = require("react/addons").addons.PureRenderMixin
 
 module.exports = React.createClass
-  getStyle: ->
-    data = @props.pattern
+  mixins: [PureRenderMixin]
 
-    {
-      width: data.width + "mm"
-      height: data.smallHeight + "mm"
-      left: data.left + "mm"
-      bottom: data.bottom + "mm"
-    }
+  getStyle: ->
+    width: @props.width + "mm"
+    height: @props.smallHeight + "mm"
+    left: @props.left + "mm"
+    bottom: @props.bottom + "mm"
 
   getDataHeight: ->
-    "#{@props.pattern.visibleHeight} (#{@props.pattern.height})"
+    "#{@props.visibleHeight} (#{@props.height})"
 
   getDataWidth: ->
-    @props.pattern.width
+    @props.width
 
   render: ->
     <div className="blueprint-leather"

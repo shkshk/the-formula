@@ -1,10 +1,13 @@
 React = require("react")
+PureRenderMixin = require("react/addons").addons.PureRenderMixin
 Felt = require("./felt.cjsx")
 Leather = require("./leather.cjsx")
 FeltBorder = require("./feltBorder.cjsx")
 Pocket = require("./pocket.cjsx")
 
 module.exports = React.createClass
+  mixins: [PureRenderMixin]
+
   getPocketHeight: ->
     leather = @props.patterns.leather
     leather.visibleHeight - leather.smallHeight
@@ -18,8 +21,16 @@ module.exports = React.createClass
         <FeltBorder top={params.lug} />
         <FeltBorder top={(data.felt.height + params.lug) / 2} />
 
-        <Leather pattern={data.leather} />
-        <Pocket width={data.leather.width}
+        <Leather
+          width={data.leather.width}
+          height={data.leather.height}
+          smallHeight={data.leather.smallHeight}
+          visibleHeight={data.leather.visibleHeight}
+          left={data.leather.left}
+          bottom={data.leather.bottom} />
+
+        <Pocket
+          width={data.leather.width}
           height={@getPocketHeight()}
           left={data.leather.left}
           bottom={data.leather.bottom} />
