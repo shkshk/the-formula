@@ -24,32 +24,38 @@ module.exports = React.createClass
       <Drawer active={@state.visible} onChange={@toggleVisibility} />
 
       <fieldset className={@getFieldsetClasses()}>
-        <Input name="felt_depth"
+        <Input
+          name="felt_depth"
           title="Толщина фетра"
           value={@props.felt_depth}
           onChange={@props.onChange} />
 
-        <Input name="margin"
+        <Input
+          name="margin"
           title="От края до строчки"
           value={@props.margin}
           onChange={@props.onChange} />
 
-        <Input name="padding"
+        <Input
+          name="padding"
           title="От строчки до кожи"
           value={@props.padding}
           onChange={@props.onChange} />
 
-        <Input name="lug"
+        <Input
+          name="lug"
           title="«Язычок»"
           value={@props.lug}
           onChange={@props.onChange} />
 
-        <Input name="power"
+        <Input
+          name="power"
           title="Постоянная Мощнуши"
           value={@props.power}
           onChange={@props.onChange} />
 
-        <Input name="vertical_power"
+        <Input
+          name="vertical_power"
           title="Вертикальная мощность"
           value={@props.vertical_power}
           onChange={@props.onChange} />

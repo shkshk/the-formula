@@ -9,7 +9,8 @@ module.exports = React.createClass
     height: @props.height + "mm"
 
   render: ->
-    <div className="blueprint-felt"
+    <div
+      className="blueprint-felt"
       style={@getStyle()}
       data-width={@props.width}
       data-height={@props.height}>

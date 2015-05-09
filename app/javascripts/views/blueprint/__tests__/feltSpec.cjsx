@@ -9,10 +9,9 @@ describe "Felt", ->
   describe "#render", ->
     beforeEach ->
       @felt = TestUtils.renderIntoDocument(<Felt width="50" height="100" />)
-      @pattern = TestUtils.findRenderedDOMComponentWithTag(@felt, "div").getDOMNode()
+      @pattern = TestUtils.findRenderedDOMComponentWithClass(@felt, "blueprint-felt").getDOMNode()
 
     it "renders felt pattern", ->
-      expect(@pattern.className).toEqual("blueprint-felt")
       expect(@pattern.style.width).toEqual("50mm")
       expect(@pattern.style.height).toEqual("100mm")
 

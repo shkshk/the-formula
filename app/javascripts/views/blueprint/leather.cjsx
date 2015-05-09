@@ -17,7 +17,8 @@ module.exports = React.createClass
     @props.width
 
   render: ->
-    <div className="blueprint-leather"
+    <div
+      className="blueprint-leather"
       style={@getStyle()}
       data-width={@getDataWidth()}
       data-height={@getDataHeight()} />

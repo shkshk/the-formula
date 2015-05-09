@@ -11,7 +11,6 @@ describe "FeltBorder", ->
       @feltBorder = TestUtils.renderIntoDocument(<FeltBorder top="120" />)
 
     it "renders felt border with specified top coordinate", ->
-      border = TestUtils.findRenderedDOMComponentWithTag(@feltBorder, "div").getDOMNode()
+      border = TestUtils.findRenderedDOMComponentWithClass(@feltBorder, "blueprint-felt_border").getDOMNode()
 
-      expect(border.className).toEqual("blueprint-felt_border")
       expect(border.style.top).toEqual("120mm")

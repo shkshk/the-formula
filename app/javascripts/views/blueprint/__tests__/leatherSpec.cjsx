@@ -16,10 +16,9 @@ describe "Leather", ->
         left=10
         bottom=20 />
       )
-      @pattern = TestUtils.findRenderedDOMComponentWithTag(@leather, "div").getDOMNode()
+      @pattern = TestUtils.findRenderedDOMComponentWithClass(@leather, "blueprint-leather").getDOMNode()
 
     it "renders leather pattern", ->
-      expect(@pattern.className).toEqual("blueprint-leather")
       expect(@pattern.style.width).toEqual("100mm")
       expect(@pattern.style.height).toEqual("43mm")
       expect(@pattern.style.left).toEqual("10mm")
