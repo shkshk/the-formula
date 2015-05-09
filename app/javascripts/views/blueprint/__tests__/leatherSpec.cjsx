@@ -1,4 +1,4 @@
-lib = "../leather.cjsx"
+lib = "../leather"
 
 jest.dontMock(lib)
 React = require("react/addons")

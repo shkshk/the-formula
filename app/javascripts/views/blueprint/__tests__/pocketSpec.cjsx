@@ -1,4 +1,4 @@
-lib = "../pocket.cjsx"
+lib = "../pocket"
 
 jest.dontMock(lib)
 React = require("react/addons")

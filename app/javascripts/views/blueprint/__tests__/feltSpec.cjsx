@@ -1,4 +1,4 @@
-lib = "../felt.cjsx"
+lib = "../felt"
 
 jest.dontMock(lib)
 React = require("react/addons")

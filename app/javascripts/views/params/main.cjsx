@@ -1,6 +1,6 @@
 React = require("react")
 PureRenderMixin = require("react/addons").addons.PureRenderMixin
-Input = require("./input.cjsx")
+Input = require("./input")
 
 module.exports = React.createClass
   mixins: [PureRenderMixin]

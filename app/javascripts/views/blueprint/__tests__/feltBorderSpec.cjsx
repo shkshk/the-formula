@@ -1,4 +1,4 @@
-lib = "../feltBorder.cjsx"
+lib = "../feltBorder"
 
 jest.dontMock(lib)
 React = require("react/addons")
