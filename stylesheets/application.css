@@ -1,22 +1,4 @@
-html,
-body,
-h1,
-h2,
-h3,
-h4,
-ul,
-li,
-ol,
-dl,
-dt,
-dd,
-p,
-form,
-fieldset,
-label,
-img,
-table,
-blockquote {
+html, body, h1, h2, h3, h4, ul, li, ol, dl, dt, dd, p, form, fieldset, label, img, table, blockquote {
   padding: 0;
   margin: 0;
   font-size: 100%;
@@ -25,7 +7,7 @@ blockquote {
 }
 body {
   color: #212121;
-  font: normal normal 125%/1 Courier New, Monaco, monospace;
+  font: normal normal 125% / 1 Courier New, Monaco, monospace;
 }
 .the_formula {
   display: table-row;
@@ -34,8 +16,6 @@ body {
   display: table-cell;
   width: 320px;
   padding: 2em 20px;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
   vertical-align: top;
 }
@@ -44,12 +24,15 @@ body {
     display: none;
   }
 }
+
 .the_formula-params_drawer {
   margin-top: 16px;
 }
+
 .main_params {
   font-size: 0;
 }
+
 .main_params div {
   position: relative;
   display: inline-block;
@@ -57,40 +40,49 @@ body {
   font-size: 16px;
   text-align: center;
 }
+
 .main_params div:after {
   font-size: 20px;
   position: absolute;
   right: -16px;
   bottom: 8px;
-  content: '×';
+  content: "×";
 }
+
 .main_params div:last-child {
   margin-right: 0;
 }
+
 .main_params div:last-child:after {
-  content: '';
+  content: "";
 }
+
 .main_params label {
   display: block;
 }
+
 .main_params input {
   font-size: 24px;
   width: 3em;
   text-align: center;
 }
+
 .additional_params {
   opacity: 0;
   margin: 24px 0;
   font-size: 14px;
   -webkit-transition: opacity 0.3s ease;
-  transition: opacity 0.3s ease;
+          transition: opacity 0.3s ease;
 }
+
 .additional_params.is-visible {
   opacity: 1;
 }
+
 .additional_params div {
   margin: 0 0 14px;
 }
+
 .additional_params label {
   display: block;
 }
@@ -99,18 +91,18 @@ body {
   padding: 2em 1em;
   text-align: center;
 }
-.blueprint-felt,
-.blueprint-leather {
+
+.blueprint-felt, .blueprint-leather {
   display: inline-block;
   text-align: center;
   border: 2px dashed #212121;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+
 .blueprint-felt {
   position: relative;
 }
+
 .blueprint-felt:before {
   position: absolute;
   top: -28px;
@@ -120,6 +112,7 @@ body {
   content: attr(data-width);
   text-align: center;
 }
+
 .blueprint-felt:after {
   position: absolute;
   top: 30%;
@@ -128,17 +121,20 @@ body {
   margin-right: 12px;
   content: attr(data-height);
 }
+
 .blueprint-felt_border {
   position: absolute;
   left: 0;
   right: 0;
   border-top: 1px dashed #212121;
 }
+
 .blueprint-leather {
   position: absolute;
   margin-left: -2px;
   border-bottom: none;
 }
+
 .blueprint-leather:before {
   position: absolute;
   top: -28px;
@@ -148,6 +144,7 @@ body {
   content: attr(data-width);
   text-align: center;
 }
+
 .blueprint-leather:after {
   position: absolute;
   top: 30%;
@@ -156,6 +153,7 @@ body {
   margin-right: 12px;
   content: attr(data-height);
 }
+
 .blueprint-leather:after {
   top: 40%;
   left: 0;
@@ -164,22 +162,25 @@ body {
 .blueprint-leather_pocket {
   position: absolute;
 }
+
 .pocket-border {
   position: absolute;
   bottom: 0;
   left: 0;
   -webkit-transform-origin: 0 0;
-  -ms-transform-origin: 0 0;
-  transform-origin: 0 0;
+      -ms-transform-origin: 0 0;
+          transform-origin: 0 0;
   border-bottom: 2px dashed #212121;
 }
+
 .pocket-border--right {
   left: auto;
   right: 0;
   -webkit-transform-origin: 100% 100%;
-  -ms-transform-origin: 100% 100%;
-  transform-origin: 100% 100%;
+      -ms-transform-origin: 100% 100%;
+          transform-origin: 100% 100%;
 }
+
 .pseudo_link {
   -moz-appearance: none;
   -webkit-appearance: none;
@@ -187,6 +188,7 @@ body {
   display: inline;
   padding: 1px 2px;
   margin: 0;
+
   border: none;
   background: none;
   cursor: pointer;
@@ -194,16 +196,21 @@ body {
   font-size: inherit;
   border-bottom: 1px dashed;
 }
+
 .pseudo_link:focus {
   outline: none;
 }
+
 .pseudo_link.is-active {
   border-radius: 2px;
   background: #fff2a8;
 }
+
 .pseudo_link--small {
   font-size: 14px;
 }
+
+/* inbox */
 #application-root {
   display: table;
   width: 100%;
