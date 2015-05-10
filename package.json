@@ -33,20 +33,24 @@
     ]
   },
   "dependencies": {
-    "gulp": "3.8.0",
-    "gulp-util": "2.2.16",
-    "gulp-livereload": "~2.1.0",
-    "gulp-stylus": "~1.0.2",
     "rimraf": "~2.2.8",
     "lodash": "~2.4.1",
     "browserify": "~4.1.9",
     "vinyl-source-stream": "~0.1.1",
-    "gulp-autoprefixer": "0.0.7",
-    "gulp-gh-pages": "~0.3.2",
     "react": "~0.13.2",
     "classnames": "~1.2.1",
     "cjsxify": "~0.3.0",
-    "coffee-script": "~1.9.2"
+    "coffee-script": "~1.9.2",
+    "autoprefixer-core": "~5.1.11",
+    "postcss-import": "~5.2.2",
+    "postcss-nested": "~0.3.1",
+    "postcss-simple-vars": "~0.3.0",
+    "gulp-postcss": "~5.1.6",
+    "gulp-livereload": "~3.8.0",
+    "gulp-util": "~3.0.4",
+    "gulp": "~3.8.11",
+    "gulp-gh-pages": "~0.5.1",
+    "postcss-mixins": "~0.2.0"
   },
   "devDependencies": {
     "express": "4.4.2",

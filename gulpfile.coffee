@@ -1,4 +1,6 @@
 AppConfig = require('./config/application')
+postprocessors = require('./config/postcss')
+
 gulp = require('gulp')
 gutil = require('gulp-util')
 rimraf = require('rimraf')
@@ -6,8 +8,7 @@ rimraf = require('rimraf')
 express = require('express')
 tinylr = require('tiny-lr')
 livereload = require('gulp-livereload')
-autoprefixer = require('gulp-autoprefixer')
-stylus = require('gulp-stylus')
+postcss = require('gulp-postcss')
 browserify = require('browserify')
 cjsxify = require('cjsxify')
 source = require('vinyl-source-stream')
@@ -31,8 +32,7 @@ gulp.task 'html', ['clean:html'], ->
 
 gulp.task 'stylesheets', ['clean:stylesheets'], ->
   gulp.src(AppConfig.paths.mainstylesheet)
-    .pipe(stylus())
-    .pipe(autoprefixer())
+    .pipe(postcss(postprocessors))
     .pipe(gulp.dest(AppConfig.buildpaths.stylesheets))
     .pipe(livereload(lr))
 

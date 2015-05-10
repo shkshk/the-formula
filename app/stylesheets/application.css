@@ -1,0 +1,8 @@
+@import 'core/index';
+@import 'modules/index';
+
+/* inbox */
+#application-root {
+  display: table;
+  width: 100%;
+}

@@ -11,7 +11,7 @@
   box-sizing: border-box;
 }
 
-pattern-dimensions() {
+@define-mixin pattern-dimensions {
   &:before {
     position: absolute;
     top: -28px;
@@ -21,6 +21,7 @@ pattern-dimensions() {
     content: attr(data-width);
     text-align: center;
   }
+
   &:after {
     position: absolute;
     top: 30%;
@@ -33,7 +34,7 @@ pattern-dimensions() {
 
 .blueprint-felt {
   position: relative;
-  pattern-dimensions();
+  @mixin pattern-dimensions;
 
   &_border {
     position: absolute;
@@ -47,7 +48,7 @@ pattern-dimensions() {
   position: absolute;
   margin-left: -2px;
   border-bottom: none;
-  pattern-dimensions()
+  @mixin pattern-dimensions;
 
   &:after {
     top: 40%;

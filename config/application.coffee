@@ -3,7 +3,7 @@ module.exports =
     views: "app/views/**/*.html"
     stylesheets: "app/stylesheets/**/*.css"
     javascripts: "app/javascripts/**/*.{cjsx,coffee}"
-    mainstylesheet: "app/stylesheets/application.styl"
+    mainstylesheet: "app/stylesheets/application.css"
     mainscript: "app/javascripts/application.cjsx"
 
   buildpaths:
