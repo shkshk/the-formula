@@ -6,6 +6,6 @@ shkshk.ru application for computing all required dimensions of a sleeve pattern.
 
 ```bash
 git clone git@github.com:shkshk/the-formula
-npm install -g gulp
-gulp serve
+npm install
+npm start
 ```
