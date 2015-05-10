@@ -1,0 +1,74 @@
+.the_formula-params {
+  display: table-cell;
+  width: 320px;
+  padding: 2em 20px;
+  box-sizing: border-box;
+  vertical-align: top;
+
+  @media print {
+    & {
+      display: none;
+    }
+  }
+}
+
+.the_formula-params_drawer {
+  margin-top: 16px;
+}
+
+.main_params {
+  font-size: 0;
+
+  div {
+    position: relative;
+    display: inline-block;
+    margin: 0 20px 0 0;
+    font-size: 16px;
+    text-align: center;
+
+    &:after {
+      font-size: 20px;
+      position: absolute;
+      right: -16px;
+      bottom: 8px;
+      content: "×";
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:last-child:after {
+      content: "";
+    }
+  }
+
+  label {
+    display: block;
+  }
+
+  input {
+    font-size: 24px;
+    width: 3em;
+    text-align: center;
+  }
+}
+
+.additional_params {
+  opacity: 0;
+  margin: 24px 0;
+  font-size: 14px;
+  transition: opacity 0.3s ease;
+
+  &.is-visible {
+    opacity: 1;
+  }
+
+  div {
+    margin: 0 0 14px;
+  }
+
+  label {
+    display: block;
+  }
+}
